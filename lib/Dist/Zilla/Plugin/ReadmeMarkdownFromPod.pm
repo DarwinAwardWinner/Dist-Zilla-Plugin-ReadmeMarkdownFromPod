@@ -1,3 +1,5 @@
+use strict;
+
 package Dist::Zilla::Plugin::ReadmeMarkdownFromPod;
 
 # ABSTRACT: Automatically convert POD to a README.mkdn for Dist::Zilla
@@ -13,7 +15,7 @@ with 'Dist::Zilla::Role::InstallTool';
 
 sub setup_installer
 {
-    my ($self, $arg) = @_;
+    my ($self) = @_;
 
     require Dist::Zilla::File::InMemory;
 
