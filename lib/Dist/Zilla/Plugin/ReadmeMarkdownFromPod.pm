@@ -53,10 +53,6 @@ no Moose;
 1;
 __END__
 
-=head1 NAME
-
-Dist::Zilla::Plugin::ReadmeMarkdownFromPod - Automatically convert POD to a README.mkdn for Dist::Zilla
-
 =head1 SYNOPSIS
 
     # dist.ini
@@ -67,18 +63,3 @@ Dist::Zilla::Plugin::ReadmeMarkdownFromPod - Automatically convert POD to a READ
 Generate a README.mkdn from C<main_module> by L<Pod::Markdown>
 
 The code is mostly a copy-paste of L<Dist::Zilla::Plugin::ReadmeFromPod>
-
-=head1 SYNOPSIS
-
-  use Dist::Zilla::Plugin::ReadmeMarkdownFromPod;
-
-=head1 AUTHOR
-
-Jacob Helwig E<lt>jhelwig at cpan.orgE<gt>
-
-=head1 LICENSE
-
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
-
-=cut
