@@ -1,6 +1,7 @@
 Revision history for Perl extension Dist::Zilla::Plugin::ReadmeMarkdownFromPod
 
 {{$NEXT}}
+    - Migrated dist.ini to @RTHOMPSON bundle
     - Added tests
     - Bring Changes file up to spec
 
