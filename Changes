@@ -1,8 +1,9 @@
 Revision history for Perl extension Dist::Zilla::Plugin::ReadmeMarkdownFromPod
 
 {{$NEXT}}
-    - Migrated dist.ini to @RTHOMPSON bundle
     - Added tests
+    - Reimplemented as a subclass of ReadmeAnyFromPod
+    - Migrated dist.ini to @RTHOMPSON bundle
     - Bring Changes file up to spec
 
 0.103510 2010-12-17

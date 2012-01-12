@@ -5,48 +5,20 @@ package Dist::Zilla::Plugin::ReadmeMarkdownFromPod;
 # ABSTRACT: Automatically convert POD to a README.mkdn for Dist::Zilla
 
 use Moose;
-use Moose::Autobox;
+extends 'Dist::Zilla::Plugin::ReadmeAnyFromPod';
 
-with 'Dist::Zilla::Role::InstallTool';
+use Dist::Zilla::Plugin::ReadmeAnyFromPod;
 
-=for Pod::Coverage setup_installer
+my $config_override = {
+    type => 'markdown',
+    filename => $Dist::Zilla::Plugin::ReadmeAnyFromPod::_types->{markdown}->{filename},
+    location => 'build',
+};
 
-=cut
-
-sub setup_installer
-{
-    my ($self) = @_;
-
-    require Dist::Zilla::File::InMemory;
-
-    my $mmcontent = $self->zilla->main_module->content;
-
-    require Pod::Markdown;
-    my $parser = Pod::Markdown->new();
-
-    require IO::Scalar;
-    my $input_handle = IO::Scalar->new(\$mmcontent);
-
-    $parser->parse_from_filehandle($input_handle);
-    my $content = $parser->as_markdown();
-
-    my $file =
-      $self->zilla->files->grep( sub { $_->name =~ m{README.mkdn\z} } )->head;
-    if ($file) {
-        $file->content($content);
-        $self->zilla->log("Override README.mkdn from [ReadmeMarkdownFromPod]");
-    }
-    else {
-        $file = Dist::Zilla::File::InMemory->new(
-            {
-                content => $content,
-                name    => 'README.mkdn',
-            }
-        );
-        $self->add_file($file);
-    }
-
-    return;
+# Override the return values of all the accessors to always return the
+# markdown defaults
+for my $method_name (keys %$config_override) {
+    around $method_name => sub { return $config_override->{$method_name}; }
 }
 
 __PACKAGE__->meta->make_immutable;
