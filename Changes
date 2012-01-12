@@ -1,6 +1,8 @@
 Revision history for Perl extension Dist::Zilla::Plugin::ReadmeMarkdownFromPod
 
 {{$NEXT}}
+
+0.120120  2012-01-11 22:48:09 PST8PDT
     - Added tests
     - Reimplemented as a subclass of ReadmeAnyFromPod
     - Migrated dist.ini to @RTHOMPSON bundle
