@@ -1,7 +1,7 @@
 Revision history for Perl extension Dist::Zilla::Plugin::ReadmeMarkdownFromPod
 
-0.103510
+0.103510 2010-12-17
     - Fixed incompatibility with Dist::Zilla::Plugin::PodWeaver
 
-0.100700
+0.100700 2010-03-11
     - Initial CPAN release
