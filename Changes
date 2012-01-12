@@ -1,5 +1,6 @@
 Revision history for Perl extension Dist::Zilla::Plugin::ReadmeMarkdownFromPod
 
+{{$NEXT}}
 0.103510 2010-12-17
     - Fixed incompatibility with Dist::Zilla::Plugin::PodWeaver
 
