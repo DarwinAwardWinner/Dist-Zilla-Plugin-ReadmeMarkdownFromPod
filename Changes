@@ -2,6 +2,10 @@ Revision history for Perl extension Dist::Zilla::Plugin::ReadmeMarkdownFromPod
 
 {{$NEXT}}
 
+0.141140  2014-04-23 20:13:19 America/Los_Angeles
+    - Update for new behavior of Pod::Markdown, which now uses
+      asterisks for bold formatting.
+
 0.120120  2012-01-11 22:48:09 PST8PDT
     - Added tests
     - Reimplemented as a subclass of ReadmeAnyFromPod
