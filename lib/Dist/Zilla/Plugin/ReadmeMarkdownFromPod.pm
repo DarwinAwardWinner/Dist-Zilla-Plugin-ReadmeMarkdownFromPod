@@ -36,4 +36,6 @@ __END__
 
 Generate a README.mkdn from C<main_module> by L<Pod::Markdown>
 
-The code is mostly a copy-paste of L<Dist::Zilla::Plugin::ReadmeFromPod>
+This module has been converted to a wrapper for
+L<Dist::Zilla::Plugin::ReadmeAnyFromPod> with settings that replicate
+the behavior of the old plugin.
