@@ -9,8 +9,8 @@ use Test::DZil;
 
 my @content_tests = (
     [ qr/^# SYNOPSIS\s*$/m, "Markdown header" ],
-    [ qr/__[^\s_]+__/, "Markdown bold formatting" ],
-    [ qr/[^_]_[^\s_]+_[^_]/, "Markdown italic formatting" ],
+    [ qr/([_*]{2})[^\s_*]+\1/, "Markdown bold formatting" ],
+    [ qr/(?<!_)_[^\s_]+_(?!_)|(?<!\*)\*[^\s*]+\*(?!\*)/, "Markdown italic formatting" ],
 );
 
 my $tzil = Builder->from_config(
